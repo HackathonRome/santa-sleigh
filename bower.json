@@ -1,0 +1,10 @@
+{
+    "name":  "chat-20",
+    "version": "0.0.1",
+    "dependencies": {
+        "bootstrap": "latest",
+        "jquery": "latest",
+        "typeahead.js": "latest"
+    },
+    "directory": "components"
+}
