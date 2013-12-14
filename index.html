@@ -40,6 +40,7 @@ $(document).ready(function(){
 
 	function join(name) {
 		var host = window.location.host.split(':')[0];
+    // private rooms
 		var socket = io.connect('http://' + host);
 		
 		// send join message
@@ -218,12 +219,6 @@ $(document).ready(function(){
     </div>
   </div>
   <div id="channel" class="bordered" style="display: none;">
-    <div id="descr" class="bordered">
-      <strong>Note:</strong> your messages make a round-trip up and down the stack (including Redis)
-      before being displayed here.<br/>
-      <strong>Tip:</strong> open up another browser window
-      to see how quickly your messages are distributed.
-    </div>
     <div id="msgs">
       <ul>
         <li class="message" style="display: none">
