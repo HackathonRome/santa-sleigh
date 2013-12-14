@@ -79,6 +79,7 @@ $(document).ready(function() {
         }else{
           $("#roomInputField").focus();
           $('#container-mobile').show();
+          phone_off = false;
         }
         $("#errors").hide();
       } else {
@@ -241,7 +242,12 @@ $(document).ready(function() {
       var json_msg = JSON.parse(msg);
       var col = json_msg.color;
       var dir = json_msg.dir;
-      fireBulletWithPositionAndColor(dir,col);
+      var action = json_msg.action;
+      if(action=='fire'){
+        fireBulletWithPositionAndColor(dir,col);  
+      }else{
+        steer(dir);
+      }
 
       //$("#msgs").append("<li><strong><span class='text-success'>" + person.name + "</span></strong> says: " + msg + "</li>");
     });
