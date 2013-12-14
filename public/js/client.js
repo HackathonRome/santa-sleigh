@@ -71,7 +71,7 @@ $(document).ready(function() {
       if (name != "") {
         socket.emit("joinserver", name);
         $("#login").detach();
-        $("#chat").show();
+        //$("#chat").show();
         $("#createRoom").show();
         if($('body').data('agent')=='desktop'){
           $("#createRoomBtn").trigger('click'); 
@@ -98,7 +98,7 @@ $(document).ready(function() {
         if (name != "") {
           socket.emit("joinserver", name);
           $("#login").detach();
-          $("#chat").show();
+          //$("#chat").show();
           $("#createRoom").show();
         }
       }

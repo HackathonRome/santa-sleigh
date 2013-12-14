@@ -81,10 +81,10 @@ io.sockets.on("connection", function (socket) {
 
 	socket.on("send", function(msg) {
 		var re = /^[w]:.*:/;
-		var whisper = re.test(msg);
-		var whisperStr = msg.split(":");
+		//var whisper = re.test(msg);
+		//var whisperStr = msg.split(":");
 		var found = false;
-		if (whisper) {
+		if (false) {
 			var whisperTo = whisperStr[1];
 			var keys = Object.keys(people);
 			if (keys.length != 0) {
