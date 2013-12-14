@@ -75,8 +75,10 @@ $(document).ready(function() {
         $("#createRoom").show();
         if($('body').data('agent')=='desktop'){
           $("#createRoomBtn").trigger('click'); 
+          $('#container-desktop').show();
         }else{
           $("#roomInputField").focus();
+          $('#container-mobile').show();
         }
         $("#errors").hide();
       } else {
@@ -236,7 +238,12 @@ $(document).ready(function() {
     });
 
     socket.on("chat", function(person, msg) {
-      $("#msgs").append("<li><strong><span class='text-success'>" + person.name + "</span></strong> says: " + msg + "</li>");
+      var json_msg = JSON.parse(msg);
+      var col = json_msg.color;
+      var dir = json_msg.dir;
+      fireBulletWithPositionAndColor(dir,col);
+
+      //$("#msgs").append("<li><strong><span class='text-success'>" + person.name + "</span></strong> says: " + msg + "</li>");
     });
     socket.on("whisper", function(person, msg) {
       if (person.name === "You") {
