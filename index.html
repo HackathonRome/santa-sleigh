@@ -3,7 +3,21 @@
 <script src='http://datejs.googlecode.com/svn/trunk/build/date.js'></script>
 <script src="/socket.io/socket.io.js"></script>
 <script>
+function getTheCode(){
+  timestamp = new Date().getTime();
+  return timestamp;
+}
+
 $(document).ready(function(){
+  var isMobileDevice = navigator.userAgent.match(/iPad|iPhone|iPod|Android/i) != null
+  if(isMobileDevice){
+    $('.mobile').show();
+    $('.desktop').hide();
+  }else{
+    $('input#name').val(getTheCode());
+    $('.mobile').hide();
+    $('.desktop').show();
+  }
 
 	// show join box
 	$('#ask').show();
@@ -123,6 +137,8 @@ $(document).ready(function(){
     margin: 0 10px;
   }
   #ask span.join {
+    clear:both;
+    width: 300px;
     padding: 10px;
     background-color: #ddd;
     -webkit-border-radius: 10px;
@@ -188,7 +204,18 @@ $(document).ready(function(){
 </head>
 <body>
   <div id="ask" class="bordered" style="display: none;">
-    Name: <input type="text" id="name" /> <a href="#"><span class="join">Join!</span></a>
+    <div class="mobile">
+      Insert Code: <input type="text" id="name" /> 
+      <br />
+      <br />
+      <a href="#"><span class="join">Join!</span></a>
+    </div>
+    <div class="desktop">
+      Use this Code to play: <input type="text" id="name" disabled /> 
+      <br />
+      <br />
+      <a href="#"><span class="join">Join!</span></a>
+    </div>
   </div>
   <div id="channel" class="bordered" style="display: none;">
     <div id="descr" class="bordered">
