@@ -51,7 +51,7 @@ if (!('webkitSpeechRecognition' in window)) {
 
 
 $(document).ready(function() {
-    var socket = io.connect("192.168.43.89:3000");
+    var socket = io.connect("192.168.43.36:3000");
     var myRoomID = null;
     $("#chat").hide();
     $("#errors").hide();

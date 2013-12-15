@@ -94,6 +94,9 @@
     if(isMobileDevice){
       $('body').data("agent","mobile");
       $('input#name').val("mobile"+getTheCode());
+      $('div.conversation').hide();
+      $('#showCreateRoom').hide();
+      $('createRoomForm').hide();
     }else{
       $('body').data("agent","desktop");
       $('input#name').val("desktop"+getTheCode());
@@ -103,7 +106,7 @@
   });
 </script>
     <script defer="defer">
-      var socket = io.connect("192.168.43.89:3000");
+      var socket = io.connect("192.168.43.36:3000");
 
 
       var stage = new Kinetic.Stage({
@@ -230,10 +233,6 @@
         layer.add(newItem);
       }
 
-      function getStartPoint(name){
-        
-
-      }
 
       function startEase(item, dxparam){
         dx = dxparam;

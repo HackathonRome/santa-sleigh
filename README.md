@@ -1,5 +1,11 @@
-A more advanced chat application. Make sure that you update <strong>server.js</strong>:
+<stromg>SANTA-SLEIGH</strong>
 
+Help Santa delivering gifts!
+
+
+Steps to play:
+
+Change:
 <pre>server.listen(3000, "192.168.56.101",  function(){
   console.log("Express server up and running.");
 });</pre>
@@ -14,10 +20,6 @@ Please also update <strong>public/js/client.js</strong>:
 with the right IP address/hostname.
 
 To install <code>npm install && bower install</code> and to launch run <code>npm start</code>.
-
-== Added whisper feature ==
-
-To use, in the chat input box, type <code>w:USER:Message</code>
 
 New up to date post: http://tamaspiros.co.uk/2013/10/26/chat-2-0-supercharged-chat-written-in-node-js-and-socket-io/
 
