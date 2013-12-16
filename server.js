@@ -1,8 +1,7 @@
+var port = process.env.PORT || 3000;
 var express = require('express');
 var app = module.exports = express();
-var server = require('http').createServer(app)
-var io = require("socket.io").listen(server);
-//var socket = io.listen(server);
+var io = require("socket.io").listen(app.listen(port));
 var uuid = require('node-uuid');
 var Room = require('./room.js');
 var _ = require('underscore')._;
@@ -22,11 +21,8 @@ app.get('/', function(req, res) {
   res.render('index.html');
 });
 
-server.listen(3000, "192.168.43.36",  function(){
-  console.log("Express server up and running.");
-});
-
 io.set("log level", 1);
+
 var people = {};
 var rooms = {};
 var sockets = [];
