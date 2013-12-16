@@ -1,4 +1,4 @@
-A more advanced chat application. Make sure that you update <strong>server.js</strong>:
+<strong>SANTA SLEIGH APP</strong> for Xmas Rome Hackathon:
 
 <pre>server.listen(3000, "192.168.56.101",  function(){
   console.log("Express server up and running.");
