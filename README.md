@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <stromg>SANTA-SLEIGH</strong>
+=======
+<strong>SANTA SLEIGH APP</strong> for Xmas Rome Hackathon:
+>>>>>>> 27662868f9887f04b775f08bd7c33d294789ba7a
 
 Help Santa delivering gifts!
 
